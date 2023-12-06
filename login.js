@@ -15,8 +15,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     localStorage.setItem("user-token", token );
     form.reset();
     console.log(token);
+
+    
+  // if (localStorage.setItem("user-token")) {
+  //   window.location.replace("users.html");
+  // }
   });
 
-  
+
   
 });
