@@ -35,59 +35,30 @@ document.addEventListener("DOMContentLoaded", async () => {
     };
 
     form.reset();
+    window.location.reload();
 
-    let { data } = await axios.post(
+    let { data: products } = await axios.post(
       "http://localhost:5050/api/v1/products",
-      {
-        nameUz,
-        nameRu,
-        colorUz,
-        colorRu,
-        price,
-        descriptionUz,
-        descriptionRu,
-        image,
-        category,
-      },
+      newProduct,
       {
         headers: {
           authorization: `Bearer ${localStorage.getItem("user-token")}`,
         },
       }
     );
-    console.log(data);
+    console.log(products);
   });
 
+  let { data: categories } = await axios.get(
+    "http://localhost:5050/api/v1/categories",
+    {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("user-token")}`,
+      },
+    }
+  );
 
-  let { datas } = await axios.get("http://localhost:5050/api/v1/products", {
-    headers: {
-      authorization: `Bearer ${localStorage.getItem("user-token")}`,
-    },
-  });
-  datas.forEach(products => {
-    let tr = document.createElement("tr")
-    let nameu = document.createElement("td")
-    let nameR = document.createElement("td")
-    let colorU = document.createElement("td")
-    let colorR = document.createElement("td");
-    let pricee = document.createElement("td")
-    let descriptionU = document.createElement("td")
-    let descriptionR = document.createElement("td")
-    let imagee = document.createElement("td")
-    imagee.setAttribute("src", products.image)
-
-    tr.append(nameu, nameR, colorU, colorR, pricee, descriptionU, descriptionR, imagee)
-    tbody.append(tr)
-
-  });
-
-  let { data } = await axios.get("http://localhost:5050/api/v1/categories", {
-    headers: {
-      authorization: `Bearer ${localStorage.getItem("user-token")}`,
-    },
-  });
-
-  data.forEach((catagory) => {
+  categories.forEach((catagory) => {
     let option = document.createElement("option");
 
     option.innerText = catagory.uz;
@@ -95,5 +66,56 @@ document.addEventListener("DOMContentLoaded", async () => {
     select.append(option);
   });
 
-  console.log(data);
+  let { data: products } = await axios.get(
+    "http://localhost:5050/api/v1/products",
+    {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("user-token")}`,
+      },
+    }
+  );
+  products.forEach((product) => {
+    let tr = document.createElement("tr");
+    let nameu = document.createElement("td");
+    let nameR = document.createElement("td");
+    let colorU = document.createElement("td");
+    let colorR = document.createElement("td");
+    let pricee = document.createElement("td");
+    let descriptionU = document.createElement("td");
+    let descriptionR = document.createElement("td");
+    let img = document.createElement("td");
+    let imagee = document.createElement("img");
+    let catagories = document.createElement("td")
+    imagee.setAttribute("src", product.image);
+    nameu.textContent = product.name?.uz;
+    console.log(product.name?.uz);
+    nameR.textContent = product.name?.ru;
+    pricee.textContent = product.price;
+    colorU.textContent = product.color?.uz;
+    colorR.textContent = product.color?.ru;
+    descriptionU.textContent = product.description?.uz;
+    descriptionR.textContent = product.description?.ru;
+    imagee.innerHTML = product.image;
+    catagories.textContent = product.category?.uz;
+   
+
+    imagee.style.width = "200px";
+    imagee.style.height = "auto";
+
+    // img.append(imagee);
+    tr.append(
+      nameu,
+      nameR,
+      pricee,
+      colorU,
+      colorR,
+      descriptionU,
+      descriptionR,
+      imagee,
+       catagories
+    );
+    tbody.append(tr);
+  });
+
+  console.log(products);
 });

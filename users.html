@@ -7,11 +7,24 @@
 ">
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js" integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script defer src="users.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Document</title>
 </head>
-<body class="bg-info">
+<body class="bg-light d-flex flex-row ">
+
+  <div class="w-25 bg-dark ">
+  <h1 class="text-center py-5 ">Admin Panel </h1>
+  <div class="border-bottom border-white"></div>
+  <div class="py-3">
+  <div class="d-flex gap-2 align-items-baseline bg-warning p-2">
+<i class="fa-solid fa-user-plus fa-2x"></i>
+<a class="text-decoration-none fs-2 text-white " href="users.html">Create User</a>
+  </div>
+  </div>
+  </div>
  
- <div class="card  w-50 px-5 m-auto my-5  ">
+ <div class="w-75 p-3 ">
+  <div class="card  w-50 px-5 m-auto my-5  ">
      <h1 class="text-center my-3">Create</h1>
 
      <form id="form" class="d-flex justify-content-center flex-column m-5  ">
@@ -42,6 +55,7 @@
 
     </tbody>
   </table>
+ </div>
 </body>
 </html>
 

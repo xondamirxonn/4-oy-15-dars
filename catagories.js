@@ -35,13 +35,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     let tr = document.createElement("tr");
     let ru = document.createElement("td");
     let uz = document.createElement("td");
+    
     let image = document.createElement("img");
     image.setAttribute("src", catagory.image);
 
     ru.textContent = catagory.ru;
     uz.textContent = catagory.uz;
-    image.textContent = catagory.image;
-
+    
     image.style.width = "100px";
     image.style.height = "100px";
 
