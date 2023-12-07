@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   let form = document.querySelector("#form");
   let table = document.querySelector("table");
   let tbody = document.querySelector("tbody");
+  let logout = document.querySelector("#logout")
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     let name = form[0].value;
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         },
       }
     );
+
 
     form.reset();
     window.location.reload();
@@ -47,4 +49,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   console.log(data);
+
+  logout.addEventListener("click" , (e) => {
+    e.preventDefault()
+
+    localStorage.removeItem("user-token")
+    window.location.replace("login.html")
+  })
 });

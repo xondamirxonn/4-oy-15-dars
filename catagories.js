@@ -42,8 +42,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     ru.textContent = catagory.ru;
     uz.textContent = catagory.uz;
     
-    image.style.width = "100px";
-    image.style.height = "100px";
+    image.style.width = "150px";
+    image.style.height = "150px";
 
     tr.append(uz, ru, image);
 
