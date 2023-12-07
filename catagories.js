@@ -50,5 +50,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     tbody.append(tr);
   });
 
+   logout.addEventListener("click", (e) => {
+     e.preventDefault();
+
+     localStorage.removeItem("user-token");
+     window.location.replace("login.html");
+   });
+
   console.log(data);
 });
