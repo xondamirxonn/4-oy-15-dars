@@ -19,6 +19,6 @@ document.addEventListener("DOMContentLoaded" , async () => {
       
       console.log(data);
       form.reset()
-      window.location.replace("client-login.html")
+      window.location.replace("/pages/client-login.html")
     })
 })

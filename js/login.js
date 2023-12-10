@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     
   if (localStorage.getItem("user-token")) {
-    window.location.replace("users.html");
+    window.location.replace("/pages/users.html");
   }
   });
 

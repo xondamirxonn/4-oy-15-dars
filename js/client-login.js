@@ -21,7 +21,7 @@ localStorage.setItem("client-token" , data.token)
 
 form.reset()
 
-if(localStorage.getItem("client-token" , data.token))  window.location.replace("index.html")
+if(localStorage.getItem("client-token" , data.token))  window.location.replace("/index.html")
 
 })
 

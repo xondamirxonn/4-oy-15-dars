@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", async () => {
      e.preventDefault();
 
      localStorage.removeItem("user-token");
-     window.location.replace("login.html");
+     window.location.replace("/pages/login.html");
    });
 
   console.log(products);

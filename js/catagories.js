@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     
     image.style.width = "150px";
     image.style.height = "150px";
+    image.style.objectFit = "cover"
 
     tr.append(uz, ru, image);
 
@@ -54,7 +55,7 @@ document.addEventListener("DOMContentLoaded", async () => {
      e.preventDefault();
 
      localStorage.removeItem("user-token");
-     window.location.replace("login.html");
+     window.location.replace("/pages/login.html");
    });
 
   console.log(data);
